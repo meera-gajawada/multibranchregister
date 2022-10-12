@@ -1,5 +1,5 @@
 def appName='devops-sample-app'
-def changesetNumber='Chset-16'
+def changesetNumber='Chset-24'
 def snapshotName =null
 def changeSetRegResult=''
 def changeSetResults=''
