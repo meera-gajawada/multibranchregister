@@ -70,11 +70,11 @@ pipeline {
           }
 
         }
-        stage('Register for main ') {
+ /*       stage('Register for main ') {
 
           when {
 
-            branch "main*"
+            branch "main123*"
 
           }
 
@@ -112,7 +112,7 @@ pipeline {
             }
           }
 
-        }
+        } */
         stage('Register for Test2') {
 
           when {
