@@ -1,5 +1,5 @@
 def appName='devops-sample-app'
-def changesetNumber='Chset-12'
+def changesetNumber='Chset-19'
 def snapshotName =null
 def changeSetRegResult=''
 def changeSetResults=''
@@ -113,11 +113,11 @@ pipeline {
           }
 
         }
-     /*   stage('Register for Test') {
+        stage('Register for Test2') {
 
           when {
 
-            branch "test-*"
+            branch "test2*"
 
           }
 
@@ -126,7 +126,7 @@ pipeline {
               changeSetResults = snDevOpsConfigGetSnapshots(
                 applicationName: "${appName}",
                 changesetNumber: "",
-                deployableName: "test",
+                deployableName: "Production_1",
                 outputFormat:"xml",
                 isValidated:false,
                 showResults:false,
@@ -156,7 +156,7 @@ pipeline {
           }
 
         }
-*/
+
 
         stage("Register pipeline using Changeset"){
           steps{
