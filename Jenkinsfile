@@ -26,11 +26,11 @@ pipeline {
           }
 
         }
-        stage('Register for Preprod') {
+        stage('Register for test1') {
 
           when {
 
-            branch "preprod-*"
+            branch "test1-*"
 
           }
 
@@ -39,7 +39,7 @@ pipeline {
               changeSetResults = snDevOpsConfigGetSnapshots(
                 applicationName: "${appName}",
                 changesetNumber: "",
-                deployableName: "preprod",
+                deployableName: "Development_1",
                 outputFormat:"xml",
                 isValidated:false,
                 showResults:false,
@@ -70,11 +70,11 @@ pipeline {
           }
 
         }
-        stage('Register for Prod') {
+        stage('Register for main') {
 
           when {
 
-            branch "prod-*"
+            branch "main*"
 
           }
 
@@ -83,7 +83,7 @@ pipeline {
               changeSetResults = snDevOpsConfigGetSnapshots(
                 applicationName: "${appName}",
                 changesetNumber: "",
-                deployableName: "prod",
+                deployableName: "Production_1",
                 outputFormat:"xml",
                 isValidated:false,
                 showResults:false,
@@ -113,11 +113,11 @@ pipeline {
           }
 
         }
-        stage('Register for Test') {
+        stage('Register for Test2') {
 
           when {
 
-            branch "test-*"
+            branch "test2*"
 
           }
 
@@ -126,7 +126,7 @@ pipeline {
               changeSetResults = snDevOpsConfigGetSnapshots(
                 applicationName: "${appName}",
                 changesetNumber: "",
-                deployableName: "test",
+                deployableName: "Production_1",
                 outputFormat:"xml",
                 isValidated:false,
                 showResults:false,
