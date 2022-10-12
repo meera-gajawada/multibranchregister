@@ -59,7 +59,6 @@ pipeline {
               sleep 10
               changeSetRegResult = snDevOpsConfigRegisterPipeline(
                 applicationName:"${appName}",
-                // changesetNumber:"${changesetNumber}"
                 snapshotName:"${snapshotName}"
                 ,showResults:true
               )
