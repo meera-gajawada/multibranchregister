@@ -26,11 +26,11 @@ pipeline {
           }
 
         }
-        stage('Register for Preprod') {
+        stage('Register for test1') {
 
           when {
 
-            branch "preprod-*"
+            branch "test1*"
 
           }
 
@@ -70,11 +70,11 @@ pipeline {
           }
 
         }
-        stage('Register for Prod') {
+        stage('Register for main') {
 
           when {
 
-            branch "prod-*"
+            branch "main*"
 
           }
 
