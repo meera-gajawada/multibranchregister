@@ -39,7 +39,7 @@ pipeline {
               changeSetResults = snDevOpsConfigGetSnapshots(
                 applicationName: "${appName}",
                 changesetNumber: "",
-                deployableName: "preprod",
+                deployableName: "Development_1",
                 outputFormat:"xml",
                 isValidated:false,
                 showResults:false,
@@ -83,7 +83,7 @@ pipeline {
               changeSetResults = snDevOpsConfigGetSnapshots(
                 applicationName: "${appName}",
                 changesetNumber: "",
-                deployableName: "prod",
+                deployableName: "Production_1",
                 outputFormat:"xml",
                 isValidated:false,
                 showResults:false,
@@ -113,7 +113,7 @@ pipeline {
           }
 
         }
-        stage('Register for Test') {
+     /*   stage('Register for Test') {
 
           when {
 
@@ -156,7 +156,7 @@ pipeline {
           }
 
         }
-
+*/
 
         stage("Register pipeline using Changeset"){
           steps{
