@@ -8,7 +8,7 @@ pipeline {
    stages {
         stage("Clone Repo"){
           steps{
-            echo "testing the multibranch configuration in main branch"
+            echo "testing  the multibranch configuration in main branch"
           
           }
         }
