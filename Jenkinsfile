@@ -70,11 +70,11 @@ pipeline {
           }
 
         }
- /*       stage('Register for main ') {
+        stage('Register for main ') {
 
           when {
 
-            branch "main123*"
+            branch "main*"
 
           }
 
@@ -112,7 +112,7 @@ pipeline {
             }
           }
 
-        } */
+        } 
         stage('Register for Test2') {
 
           when {
@@ -194,7 +194,7 @@ pipeline {
                 }
             }
         } 
-      stage("Register pipeline Test"){
+/*      stage("Register pipeline Test"){
           steps{
               echo "################# Registering pipeline again using snapshotName: Production_1-v12.dpl"
               script{
@@ -210,6 +210,6 @@ pipeline {
                 
               }
           }
-        }
+        } */
    }
 }
