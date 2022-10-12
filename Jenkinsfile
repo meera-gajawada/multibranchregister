@@ -196,12 +196,12 @@ pipeline {
         } 
       stage("Register pipeline Test"){
           steps{
-              echo "################# Registering pipeline again using snapshotName: Production_1-v14.dpl"
+              echo "################# Registering pipeline again using snapshotName: Production_1-v12.dpl"
               script{
                 sleep 5
                 changeSetRegResult = snDevOpsConfigRegisterPipeline(
                         applicationName:"${appName}",
-                        snapshotName:"Production_1-v14.dpl"
+                        snapshotName:"Production_1-v12.dpl"
                         ,showResults:true)
 
 
