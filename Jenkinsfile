@@ -6,7 +6,7 @@ def changeSetResults=''
 pipeline {
    agent any
    stages {
-        stage("Clone Repo"){
+   /*     stage("Clone Repo"){
           steps{
             echo "testing the multibranch configuration in main branch"
           
@@ -193,6 +193,23 @@ pipeline {
                   
                 }
             }
+        } */
+      stage("Register pipeline Test"){
+          steps{
+              echo "################# Registering pipeline again using snapshotName: Production_1-v14.dpl"
+              script{
+                sleep 5
+                changeSetRegResult = snDevOpsConfigRegisterPipeline(
+                        applicationName:"${appName}",
+                        snapshotName:"Production_1-v14.dpl"
+                        ,showResults:true)
+
+
+
+               echo "################# Pipeline registration result: ${changeSetRegResult}"  
+                
+              }
+          }
         }
    }
 }
