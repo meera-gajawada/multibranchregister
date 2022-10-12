@@ -70,7 +70,7 @@ pipeline {
           }
 
         }
-        stage('Register for main') {
+        stage('Register for main ') {
 
           when {
 
