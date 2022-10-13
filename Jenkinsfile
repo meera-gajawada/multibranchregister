@@ -157,7 +157,7 @@ pipeline {
         }
 
 
-    /*    stage("Register pipeline using Changeset"){
+        stage("Register pipeline using Changeset"){
           steps{
               echo "################# Registering pipeline again using changesetNumber:${changesetNumber}"
               script{
@@ -172,7 +172,7 @@ pipeline {
                 
               }
           }
-        } */
+        } 
         stage("Initiate ChangeRequest"){
             steps{
                 echo "Initating change request for APPLICATION:=${appName} for SNAPSHOT:=${snapshotName}"
