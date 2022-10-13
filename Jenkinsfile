@@ -193,7 +193,7 @@ pipeline {
                 }
             }
         } 
-/*      stage("Register pipeline Test"){
+      stage("Register pipeline Test"){
           steps{
               echo "################# Registering pipeline again using snapshotName: Production_1-v12.dpl"
               script{
@@ -209,6 +209,6 @@ pipeline {
                 
               }
           }
-        } */
+        } 
    }
 }
