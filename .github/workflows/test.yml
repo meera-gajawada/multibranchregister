@@ -3,20 +3,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  registerartifact:
-    name: Register Artifact
-    runs-on: ubuntu-latest
-    steps:
-      - name: ServiceNow Register Artifact
-        uses: ServiceNow/servicenow-devops-register-artifact@v1.34.2
-        with:
-          devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
-          devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
-          instance-url: ${{ secrets.SN_INSTANCE_URL }}
-          tool-id: ${{ secrets.SN_ORCHESTRATION_TOOL_ID }}
-          context-github: ${{ toJSON(github) }}
-          job-name: 'Register Artifact'
-          artifacts: '[{"name": "com:customactiondemo","version": "1.${{ github.run_number }}","semanticVersion": "1.${{ github.run_number }}.0","repositoryName": "${{ github.repository }}"}]'
   registerpackage:
     name: Register Package
     runs-on: ubuntu-latest
