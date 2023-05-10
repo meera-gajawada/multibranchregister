@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ServiceNow Register Package
-        uses: ServiceNow/servicenow-devops-register-package@scratch_STRY55387551
+        uses: ServiceNow/servicenow-devops-register-package@s1.34.2
         with:
           devops-integration-user-name: ${{ secrets.SN_DEVOPS_USER }}
           devops-integration-user-password: ${{ secrets.SN_DEVOPS_PASSWORD }}
