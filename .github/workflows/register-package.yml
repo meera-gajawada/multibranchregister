@@ -1,0 +1,33 @@
+name: RegisterPackageWorkflow
+on: 
+  workflow_dispatch:
+
+jobs:
+  registerpackage:
+    name: Register Package
+    runs-on: ubuntu-latest
+    steps:
+      - name: ServiceNow Register Package
+        uses: ServiceNow/servicenow-devops-register-package@main
+        with:
+          devops-integration-token: ${{ secrets.SN_DEVOPS_INTEGRATION_TOKEN }}
+          instance-url: ${{ secrets.SN_INSTANCE_URL }}
+          tool-id: ${{ secrets.SN_ORCHESTRATION_TOOL_ID }}
+          context-github: ${{ toJSON(github) }}
+          job-name: 'Register Package'
+          artifacts: '[{"name": "com:customactiondemo","version": "1.2","semanticVersion": "1.2.0","repositoryName": "${{ github.repository }}"}]'
+          package-name: 'demopackage.war'
+          
+  registerpackage-invalid:
+    name: Register Package when no credentials passed
+    runs-on: ubuntu-latest
+    steps:
+      - name: ServiceNow Register Package
+        uses: ServiceNow/servicenow-devops-register-package@main
+        with:
+          instance-url: ${{ secrets.SN_INSTANCE_URL }}
+          tool-id: ${{ secrets.SN_ORCHESTRATION_TOOL_ID }}
+          context-github: ${{ toJSON(github) }}
+          job-name: 'Register Package'
+          artifacts: '[{"name": "com:customactiondemo","version": "1.2","semanticVersion": "1.2.0","repositoryName": "${{ github.repository }}"}]'
+          package-name: 'demopackage.war'
