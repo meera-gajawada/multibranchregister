@@ -3,6 +3,19 @@ on:
   workflow_dispatch:
 
 jobs:
+  registerartifact:
+    name: Register Artifact with token based authentication
+    runs-on: ubuntu-latest
+    steps:
+      - name: ServiceNow Register Artifact
+        uses: ServiceNow/servicenow-devops-register-artifact@main
+        with:
+          devops-integration-token: '${{ secrets.SN_DEVOPS_INTEGRATION_TOKEN }}'
+          instance-url: '${{ secrets.SN_INSTANCE_URL }}'
+          tool-id: '${{ secrets.SN_ORCHESTRATION_TOOL_ID }}'
+          context-github: '${{ toJSON(github) }}'
+          job-name: 'Register Artifact'
+          artifacts: '[{"name": "com:customactiondemo","version": "1.9","semanticVersion": "1.9.0","repositoryName": "${{ github.repository }}"}]'
   registerpackage:
     name: Register Package
     runs-on: ubuntu-latest
@@ -15,7 +28,7 @@ jobs:
           tool-id: ${{ secrets.SN_ORCHESTRATION_TOOL_ID }}
           context-github: ${{ toJSON(github) }}
           job-name: 'Register Package'
-          artifacts: '[{"name": "com:customactiondemo","version": "1.2","semanticVersion": "1.2.0","repositoryName": "${{ github.repository }}"}]'
+          artifacts: '[{"name": "com:customactiondemo","version": "1.9","semanticVersion": "1.9.0","repositoryName": "${{ github.repository }}"}]'
           package-name: 'demopackage.war'
           
   registerpackage-invalid:
