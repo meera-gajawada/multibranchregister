@@ -36,7 +36,7 @@ jobs:
       - name: ServiceNow Register Artifact
         uses: ServiceNow/servicenow-devops-register-artifact@main
         with:
-          devops-integration-token: '${{ secrets.SN_DEVOPS_INTEGRATION_TOKEN }}'
+          devops-integration-token: '123445234324'
           instance-url: '${{ secrets.SN_INSTANCE_URL }}'
           tool-id: '${{ secrets.SN_ORCHESTRATION_TOOL_ID }}'
           context-github: '${{ toJSON(github) }}'
